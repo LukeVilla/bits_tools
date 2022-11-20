@@ -9,11 +9,11 @@ authors = [
   { name="Luke Villalobos", email="luke@bytesizeinfo.com" },
 ]
 description = "A Python package to simulate bits"
-readme = "readme.rst"
+readme = "README.md"
 requires-python = ">=3.0"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: GNU General Public License v3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Operating System :: OS Independent",
 ]
 

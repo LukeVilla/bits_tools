@@ -6,6 +6,11 @@ class TwoBits(object):
         self.bits.append(bit1)
         self.bits.append(bit2)
 
+    def _validate(self):
+        for bit in self.bits:
+            if bit not in [0, 1]:
+                return False
+            return True
     def andGate(self):
         """Implements a basic AND gate.
         Takes no arguments."""

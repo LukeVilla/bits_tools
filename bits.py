@@ -5,6 +5,12 @@ class TwoBits(object):
         self.bit = bit1
         self.bits.append(bit1)
         self.bits.append(bit2)
+    def get_bits(self):
+        return self.bits
+
+    def set_bits(self, newb1, newb2):
+        self.bits[0] = newb1
+        self.bits[1] = newb2
 
     def _validate(self):
         for bit in self.bits:

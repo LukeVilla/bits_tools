@@ -1,4 +1,5 @@
 import random
+from exceptions import InvalidBitsError
 class TwoBits(object):
     def __init__(self, bit1, bit2):
         self.bits = []
@@ -9,14 +10,17 @@ class TwoBits(object):
         return self.bits
 
     def set_bits(self, newb1, newb2):
+        if newb1 not in [0, 1] or newb2 not in [0, 1]:
+            raise InvalidBitsError("Bits must be either 0 or 1")
         self.bits[0] = newb1
         self.bits[1] = newb2
 
-    def _validate(self):
-        for bit in self.bits:
+    def validate(self, bits):
+        for bit in bits:
             if bit not in [0, 1]:
-                return False
+                raise InvalidBitsError("Bits must be either 0 or 1")
             return True
+
     def andGate(self):
         """Implements a basic AND gate.
         Takes no arguments."""

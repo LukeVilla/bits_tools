@@ -6,20 +6,18 @@ class TwoBits(object):
         self.bit = bit1
         self.bits.append(bit1)
         self.bits.append(bit2)
+
     def get_bits(self):
         return self.bits
 
-    def set_bits(self, newb1, newb2):
-        if newb1 not in [0, 1] or newb2 not in [0, 1]:
-            raise InvalidBitsError("Bits must be either 0 or 1")
-        self.bits[0] = newb1
-        self.bits[1] = newb2
+    def set_bits(self, newbits):
+        self.validate(newbits)
+        self.bits = newbits
 
-    def validate(self, bits):
+    def validate(bits):
         for bit in bits:
             if bit not in [0, 1]:
                 raise InvalidBitsError("Bits must be either 0 or 1")
-            return True
 
     def andGate(self):
         """Implements a basic AND gate.
@@ -76,6 +74,12 @@ class TwoBits(object):
 class RandomBits(object):
     def __init__(self, num_of_bits):
         self.bits = [random.randrange(0, 2) for _ in range(num_of_bits)]
+
+    def validate(bits):
+        for bit in bits:
+            if bit not in [0, 1]:
+                raise InvalidBitsError("Bits must be either 0 or 1")
+            return True
 
     def andGate(self, otherBits):
         """Implements a basic AND gate.

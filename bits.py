@@ -14,7 +14,10 @@ class TwoBits(object):
         self.validate(newbits)
         self.bits = newbits
 
+    @staticmethod
     def validate(bits):
+        if len(bits) != 2:
+            raise InvalidBitsError("The number of bits must be 2")
         for bit in bits:
             if bit not in [0, 1]:
                 raise InvalidBitsError("Bits must be either 0 or 1")
@@ -75,7 +78,16 @@ class RandomBits(object):
     def __init__(self, num_of_bits):
         self.bits = [random.randrange(0, 2) for _ in range(num_of_bits)]
 
-    def validate(bits):
+    def get_bits(self):
+        return self.bits
+
+    def set_bits(self, newbits):
+        self.validate(newbits)
+        self.bits = newbits
+
+    def validate(self, bits):
+        if len(self.bits) != len(bits):
+            raise InvalidBitsError("The number of bits must be " + str(len(self.bits)))
         for bit in bits:
             if bit not in [0, 1]:
                 raise InvalidBitsError("Bits must be either 0 or 1")

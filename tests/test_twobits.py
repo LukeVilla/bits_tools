@@ -1,7 +1,7 @@
 import sys
 import pytest
 
-def test_twobits_tools():
+def test_twobits():
     import bits
     zero_one = bits.TwoBits(0,1)
     assert zero_one.bits == [0,1]

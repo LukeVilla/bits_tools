@@ -29,7 +29,7 @@ def test_twobits_xor():
     import bits
     zero_one = bits.TwoBits(0,1)
     assert zero_one.xorGate() == 1
-def test_twobits_tools_xnor():
+def test_twobits_xnor():
     import bits
     zero_one = bits.TwoBits(0,1)
     assert zero_one.xnorGate() == 0

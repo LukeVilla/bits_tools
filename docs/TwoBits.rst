@@ -1,14 +1,7 @@
 .. |tb| replace:: :code:`TwoBits`
-
-!!!!!!!!!!!!!!!
-bits-tools Docs
-!!!!!!!!!!!!!!!
-
---------
-Overview
---------
-bits-tools is a Python module that lets you work with individual bits.
-It has two main classes: |tb| and :code:`RandomBits`.
+!!!!!!!!!!!!
+TwoBits Docs
+!!!!!!!!!!!!
 
 -------
 |tb|

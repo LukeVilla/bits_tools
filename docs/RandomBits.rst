@@ -1,26 +1,21 @@
-.. |tb| replace:: :code:`TwoBits`
+.. |rb| replace:: :code:`RandomBits`
+.. |bitslist| replace:: :code:`[bit1,bit2,...,bitn]`, where n is the number of bits
 
 !!!!!!!!!!!!!!!
-bits-tools Docs
+RandomBits Docs
 !!!!!!!!!!!!!!!
 
 --------
 Overview
 --------
-bits-tools is a Python module that lets you work with individual bits.
-It has two main classes: |tb| and :code:`RandomBits`.
+|rb| lets you make a string of random bits of a specified length.
 
--------
-|tb|
--------
-|tb| stores two bits and lets you use logic gates on them.
 
 __init__ (Constructor)
 ......................
 Arguments:
 
-* :code:`bit1`: integer, either 0 or 1
-* :code:`bit2`: integer, either 0 or 1
+* :code:`num_of_bits`: the number of random bits
 
 Return Value: (nothing)
 
@@ -28,13 +23,12 @@ get_bits (Getter)
 .................
 Arguments: (none)
 
-Return Value: :code:`[bit1,bit2]`
-
+Return Value: |bitslist|
 set_bits (Setter)
 .................
 Arguments:
 
-* :code:`[bit1,bit2]`
+* |bitslist|
 
 Return Value: (none)
 
@@ -42,7 +36,7 @@ validate (Validator)
 ....................
 Arguments:
 
-* :code:`[bit1,bit2]`
+* |bitslist|
 
 Raises InvalidBitsError if bits are invalid
 
@@ -52,49 +46,49 @@ andGate
 .......
 Arguments: (none)
 
-Return Value: 1 or 0
+Return Value: |bitslist|
 
 orGate
 ......
 Arguments: (none)
 
-Return Value: 1 or 0
+Return Value: |bitslist|
 
 notGate
 .......
 Arguments: (none)
 
-Return Value: :code:`[bit1, bit2]`
+Return Value: |bitslist|
 
 norGate
 .......
 Arguments: (none)
 
-Return Value: 1 or 0
+Return Value: |bitslist|
 
 nandGate
 ........
 Arguments: (none)
 
-Return Value: 1 or 0
+Return Value: |bitslist|
 
 xorGate
 .......
 Arguments: (none)
 
-Return Value: 1 or 0
+Return Value: |bitslist|
 
 xnorGate
 ........
 Arguments: (none)
 
-Return Value: 1 or 0
+Return Value: |bitslist|
 
 andGate
 .......
 Arguments: (none)
 
-Return Value: 1 or 0
+Return Value: |bitslist|
 
 
 

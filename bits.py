@@ -1,5 +1,94 @@
 import random
 from exceptions import InvalidBitsError
+
+class Bits(object):
+    def __init__(self, bits):
+        self.bits = bits
+
+    def andGate(self, otherBits):
+        """Implements a basic AND gate.
+        Takes one argument (otherBits), which is a list of bits."""
+        results = []
+        for i in range(len(self.bits)):
+            if self.bits[i] and otherBits.bits[i]:
+                results.append(1)
+            else:
+                results.append(0)
+        return results
+
+    def orGate(self, otherBits):
+        """Implements a basic OR gate.
+        Takes one argument (otherBits), which is a list of bits."""
+        results = []
+        for i in range(len(self.bits)):
+            if self.bits[i] or otherBits.bits[i]:
+                results.append(1)
+            else:
+                results.append(0)
+        return results
+
+    def nandGate(self, otherBits):
+        """Implements a basic NAND gate.
+        Takes one argument (otherBit), which is a list of bits."""
+        results = []
+        for i in range(len(self.bits)):
+            if self.bits[i] and otherBits.bits[i]:
+                results.append(0)
+            else:
+                results.append(1)
+        return results
+
+    def notGate(self):
+        """Implements a basic NOT gate.
+        Takes no arguments. (It operates on the Bits instance it was called from.)"""
+        results = []
+        for i in range(len(self.bits)):
+            if self.bits[i]:
+                results.append(0)
+            else:
+                results.append(1)
+        return results
+
+    def norGate(self,otherBits):
+        """Implements a NOR gate.
+        Takes one argument (otherBits), a list of bits."""
+        results = []
+        for i in range(len(self.bits)):
+            if self.bits[i] or otherBits.bits[i]:
+                results.append(0)
+            else:
+                results.append(1)
+        return results
+    
+    def xorGate(self,otherBits):
+        """Implements an XOR gate.
+        Takes one argument (otherBits), a list of bits."""
+        results = []
+        for i in range(len(self.bits)):
+            if self.bits[i] and otherBits.bits[i]:
+                results.append(0)
+            elif self.bits[i] and not otherBits.bits[i]:
+                results.append(1)
+            elif not self.bits[i] and otherBits.bits[i]:
+                results.append(1)
+            else:
+                results.append(0)
+        return results
+    
+    def xnorGate(self, otherBits):
+        """Implements an XNOR gate.
+        Takes one argument (otherBits), a list of bits."""
+        results = []
+        for i in range(len(self.bits)):
+            if self.bits[i] and otherBits.bits[i]:
+                results.append(1)
+            elif not self.bits[i] and not otherBits.bits[i]:
+                results.append(1)
+            else:
+                results.append(0)
+        return results
+
+
 class TwoBits(object):
     def __init__(self, bit1, bit2):
         self.bits = []
@@ -74,7 +163,7 @@ class TwoBits(object):
         return 0
 
 
-class RandomBits(object):
+class RandomBits(Bits):
     def __init__(self, num_of_bits):
         self.bits = [random.randrange(0, 2) for _ in range(num_of_bits)]
 

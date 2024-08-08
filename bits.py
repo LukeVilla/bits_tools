@@ -106,7 +106,7 @@ class TwoBits(object):
     @staticmethod
     def validate(bits):
         if len(bits) != 2:
-            raise InvalidBitsError("The number of bits must be 2")
+            raise InvalidBitsError("The TwoBits class can only store two bits. Try using the Bits class.")
         for bit in bits:
             if bit not in [0, 1]:
                 raise InvalidBitsError("Bits must be either 0 or 1")

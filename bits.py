@@ -22,33 +22,54 @@ class Bits(object):
         """Implements a basic AND gate.
         Takes one argument (otherBits), which is a list of bits."""
         results = []
-        for i in range(len(self.bits)):
-            if self.bits[i] and otherBits.bits[i]:
-                results.append(1)
-            else:
-                results.append(0)
+        if type(otherBits) == Bits:
+            for i in range(len(self.bits)):
+                if self.bits[i] and otherBits.bits[i]:
+                    results.append(1)
+                else:
+                    results.append(0)
+        else:
+            for i in range(len(self.bits)):
+                if self.bits[i] and otherBits[i]:
+                    results.append(1)
+                else:
+                    results.append(0)
         return results
 
     def orGate(self, otherBits):
         """Implements a basic OR gate.
         Takes one argument (otherBits), which is a list of bits."""
         results = []
-        for i in range(len(self.bits)):
-            if self.bits[i] or otherBits.bits[i]:
-                results.append(1)
-            else:
-                results.append(0)
+        if type(otherBits) == Bits:
+            for i in range(len(self.bits)):
+                if self.bits[i] or otherBits.bits[i]:
+                    results.append(1)
+                else:
+                    results.append(0)
+        else:
+            for i in range(len(self.bits)):
+                if self.bits[i] or otherBits[i]:
+                    results.append(1)
+                else:
+                    results.append(0)
         return results
 
     def nandGate(self, otherBits):
         """Implements a basic NAND gate.
         Takes one argument (otherBit), which is a list of bits."""
         results = []
-        for i in range(len(self.bits)):
-            if self.bits[i] and otherBits.bits[i]:
-                results.append(0)
-            else:
-                results.append(1)
+        if type(otherBits) == Bits:
+            for i in range(len(self.bits)):
+                if self.bits[i] and otherBits.bits[i]:
+                    results.append(0)
+                else:
+                    results.append(1)
+        else:
+            for i in range(len(self.bits)):
+                if self.bits[i] and otherBits[i]:
+                    results.append(0)
+                else:
+                    results.append(1)
         return results
 
     def notGate(self):
@@ -66,39 +87,66 @@ class Bits(object):
         """Implements a NOR gate.
         Takes one argument (otherBits), a list of bits."""
         results = []
-        for i in range(len(self.bits)):
-            if self.bits[i] or otherBits.bits[i]:
-                results.append(0)
-            else:
-                results.append(1)
+        if type(otherBits) == Bits:
+            for i in range(len(self.bits)):
+                if self.bits[i] or otherBits.bits[i]:
+                    results.append(0)
+                else:
+                    results.append(1)
+        else:
+            for i in range(len(self.bits)):
+                if self.bits[i] or otherBits.bits[i]:
+                    results.append(0)
+                else:
+                    results.append(1)
         return results
     
     def xorGate(self,otherBits):
         """Implements an XOR gate.
         Takes one argument (otherBits), a list of bits."""
         results = []
-        for i in range(len(self.bits)):
-            if self.bits[i] and otherBits.bits[i]:
-                results.append(0)
-            elif self.bits[i] and not otherBits.bits[i]:
-                results.append(1)
-            elif not self.bits[i] and otherBits.bits[i]:
-                results.append(1)
-            else:
-                results.append(0)
+        if type(otherBits) == Bits:
+            for i in range(len(self.bits)):
+                if self.bits[i] and otherBits.bits[i]:
+                    results.append(0)
+                elif self.bits[i] and not otherBits.bits[i]:
+                    results.append(1)
+                elif not self.bits[i] and otherBits.bits[i]:
+                    results.append(1)
+                else:
+                    results.append(0)
+        else:
+            for i in range(len(self.bits)):
+                if self.bits[i] and otherBits[i]:
+                    results.append(0)
+                elif self.bits[i] and not otherBits[i]:
+                    results.append(1)
+                elif not self.bits[i] and otherBits[i]:
+                    results.append(1)
+                else:
+                    results.append(0)
         return results
     
     def xnorGate(self, otherBits):
         """Implements an XNOR gate.
         Takes one argument (otherBits), a list of bits."""
         results = []
-        for i in range(len(self.bits)):
-            if self.bits[i] and otherBits.bits[i]:
-                results.append(1)
-            elif not self.bits[i] and not otherBits.bits[i]:
-                results.append(1)
-            else:
-                results.append(0)
+        if type(otherBits) == Bits:
+            for i in range(len(self.bits)):
+                if self.bits[i] and otherBits.bits[i]:
+                    results.append(1)
+                elif not self.bits[i] and not otherBits.bits[i]:
+                    results.append(1)
+                else:
+                    results.append(0)
+        else:
+            for i in range(len(self.bits)):
+                if self.bits[i] and otherBits[i]:
+                    results.append(1)
+                elif not self.bits[i] and not otherBits[i]:
+                    results.append(1)
+                else:
+                    results.append(0)
         return results
 
 

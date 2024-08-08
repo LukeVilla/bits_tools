@@ -5,6 +5,19 @@ class Bits(object):
     def __init__(self, bits):
         self.bits = bits
 
+    def pad(self, otherBits):
+        selfLen,otherLen = len(self.bits),len(otherBits)
+        if selfLen > otherLen:
+            for i in range(selfLen - otherLen):
+                otherBits.insert(0,0)
+        if selfLen < otherLen:
+            for i in range(otherLen - selfLen):
+                self.bits.insert(0,0)
+        if selfLen == otherLen:
+            pass
+        return otherBits
+
+
     def andGate(self, otherBits):
         """Implements a basic AND gate.
         Takes one argument (otherBits), which is a list of bits."""

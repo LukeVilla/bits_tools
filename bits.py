@@ -95,7 +95,7 @@ class Bits(object):
                     results.append(1)
         else:
             for i in range(len(self.bits)):
-                if self.bits[i] or otherBits.bits[i]:
+                if self.bits[i] or otherBits[i]:
                     results.append(0)
                 else:
                     results.append(1)
@@ -291,11 +291,18 @@ class RandomBits(Bits):
         """Implements a NOR gate.
         Takes one argument (otherBits), a list of bits."""
         results = []
-        for i in range(len(self.bits)):
-            if self.bits[i] or otherBits[i]:
-                results.append(0)
-            else:
-                results.append(1)
+        if type(otherBits) == Bits:
+            for i in range(len(self.bits)):
+                if self.bits[i] or otherBits.bits[i]:
+                    results.append(0)
+                else:
+                    results.append(1)
+        else:
+            for i in range(len(self.bits)):
+                if self.bits[i] or otherBits[i]:
+                    results.append(0)
+                else:
+                    results.append(1)
         return results
     
     def xorGate(self,otherBits):

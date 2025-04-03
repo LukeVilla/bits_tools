@@ -6,3 +6,4 @@ release = "1.1"
 rst_epilog = """.. role:: python(code)
    :language: python"""
 root_doc = "index"
+extensions = ["sphinx.ext.autodoc"]

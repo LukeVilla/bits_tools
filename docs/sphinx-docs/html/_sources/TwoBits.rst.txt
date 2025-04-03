@@ -1,21 +1,20 @@
-.. |rb| replace:: :code:`RandomBits`
-.. |bitslist| replace:: :code:`[bit1,bit2,...,bitn]`
+.. |tb| replace:: :code:`TwoBits`
 
-!!!!!!!!!!!!!!!
-RandomBits Docs
-!!!!!!!!!!!!!!!
+!!!!!!!!!!!!
+TwoBits Docs
+!!!!!!!!!!!!
 
---------
-|rb|
---------
-|rb| lets you make a string of random bits of a specified length.
-
+-------
+|tb|
+-------
+|tb| stores two bits and lets you use logic gates on them.
 
 __init__ (Constructor)
 ......................
 Arguments:
 
-* :code:`num_of_bits`: the number of random bits
+* :code:`bit1`: integer, either 0 or 1
+* :code:`bit2`: integer, either 0 or 1
 
 Return Value: (nothing)
 
@@ -23,13 +22,13 @@ get_bits (Getter)
 .................
 Arguments: (none)
 
-Return Value: |bitslist|
+Return Value: :code:`[bit1,bit2]`
 
 set_bits (Setter)
 .................
 Arguments:
 
-* |bitslist|
+* :code:`[bit1,bit2]`
 
 Return Value: (none)
 
@@ -37,7 +36,7 @@ validate (Validator)
 ....................
 Arguments:
 
-* |bitslist|
+* :code:`[bit1,bit2]`
 
 Raises InvalidBitsError if bits are invalid
 
@@ -47,49 +46,46 @@ andGate
 .......
 Arguments: (none)
 
-Return Value: |bitslist|
+Return Value: 1 or 0
 
 orGate
 ......
 Arguments: (none)
 
-Return Value: |bitslist|
+Return Value: 1 or 0
 
 notGate
 .......
 Arguments: (none)
 
-Return Value: |bitslist|
+Return Value: :code:`[bit1, bit2]`
 
 norGate
 .......
 Arguments: (none)
 
-Return Value: |bitslist|
+Return Value: 1 or 0
 
 nandGate
 ........
 Arguments: (none)
 
-Return Value: |bitslist|
+Return Value: 1 or 0
 
 xorGate
 .......
 Arguments: (none)
 
-Return Value: |bitslist|
+Return Value: 1 or 0
 
 xnorGate
 ........
 Arguments: (none)
 
-Return Value: |bitslist|
+Return Value: 1 or 0
 
 andGate
 .......
 Arguments: (none)
 
-Return Value: |bitslist|
-
-
-
+Return Value: 1 or 0

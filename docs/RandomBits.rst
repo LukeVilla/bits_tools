@@ -33,13 +33,13 @@ Arguments:
 
 Return Value: (none)
 
-validate (Validator)
+validate
 ....................
 Arguments:
 
 * |bitslist|
 
-Raises InvalidBitsError if bits are invalid
+Raises InvalidBitsError if bits are invalid.
 
 Return Value: (none)
 

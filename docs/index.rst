@@ -3,5 +3,6 @@
 .. toctree::
     :maxdepth: 2
 
+    Bits
     RandomBits
     TwoBits

@@ -6,6 +6,26 @@ class Bits(object):
     def __init__(self, bits):
         self.bits = bits
 
+    def get_bits(self):
+        """Getter method for the class.
+        Returns the list of bits."""
+        return self.bits
+    
+    def set_bits(self, newbits):
+        """Setter method that validates the bits first."""
+        self.validate(newbits)
+        self.bits = newbits
+
+    def validate(self, bits):
+        """Makes sure there are the same number of bits in the provided list as the instance's ``bits`` property and that they are all 0 or 1.
+        Returns True if the bits are valid, otherwise raises an InvalidBitsError."""
+        if len(self.bits) != len(bits):
+            raise InvalidBitsError("The number of bits must be " + str(len(self.bits)))
+        for bit in bits:
+            if bit not in [0, 1]:
+                raise InvalidBitsError("Bits must be either 0 or 1")
+            return True
+        
     def pad(self, otherBits):
         """Pads two lists of bits with zeroes to make them the same length."""
         selfLen,otherLen = len(self.bits),len(otherBits)
@@ -235,6 +255,19 @@ class RandomBits(Bits):
     def __init__(self, num_of_bits):
         self.bits = [random.randrange(0, 2) for _ in range(num_of_bits)]
 
+    def pad(self, otherBits):
+        """Pads two lists of bits with zeroes to make them the same length."""
+        selfLen,otherLen = len(self.bits),len(otherBits)
+        if selfLen > otherLen:
+            for i in range(selfLen - otherLen):
+                otherBits.insert(0,0)
+        if selfLen < otherLen:
+            for i in range(otherLen - selfLen):
+                self.bits.insert(0,0)
+        if selfLen == otherLen:
+            pass
+        return otherBits
+
     def get_bits(self):
         """Getter method for the class.
         Returns the list of bits."""
@@ -246,7 +279,7 @@ class RandomBits(Bits):
         self.bits = newbits
 
     def validate(self, bits):
-        """Makes sure there are only two bits in the provided list and that they are all 0 or 1.
+        """Makes sure there are the same number of bits in the provided list as the instance's ``bits`` property and that they are all 0 or 1.
         Returns True if the bits are valid, otherwise raises an InvalidBitsError."""
         if len(self.bits) != len(bits):
             raise InvalidBitsError("The number of bits must be " + str(len(self.bits)))

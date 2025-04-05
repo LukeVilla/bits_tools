@@ -1,6 +1,3 @@
-.. |rb| replace:: :code:`RandomBits`
-.. |bitslist| replace:: :code:`[bit1,bit2,...,bitn]`
-
 ###############
 RandomBits Docs
 ###############
@@ -10,6 +7,10 @@ RandomBits Docs
 __init__ (Constructor)
 """"""""""""""""""""""
 .. automethod:: bits.RandomBits.__init__
+
+pad
+"""
+.. automethod:: bits.RandomBits.pad
 
 get_bits (Getter)
 """""""""""""""""

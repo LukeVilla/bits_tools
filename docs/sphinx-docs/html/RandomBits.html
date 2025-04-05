@@ -35,79 +35,111 @@
             
   <section id="randombits-docs">
 <h1>RandomBits Docs<a class="headerlink" href="#randombits-docs" title="Link to this heading">¶</a></h1>
-<section id="rb">
-<h2><code class="code docutils literal notranslate"><span class="pre">RandomBits</span></code><a class="headerlink" href="#rb" title="Link to this heading">¶</a></h2>
-<p><code class="code docutils literal notranslate"><span class="pre">RandomBits</span></code> lets you make a string of random bits of a specified length.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="bits.RandomBits">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bits.</span></span><span class="sig-name descname"><span class="pre">RandomBits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_of_bits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.RandomBits" title="Link to this definition">¶</a></dt>
+<dd><p>Like <code class="docutils literal notranslate"><span class="pre">Bits</span></code>, except the bits are randomly generated.</p>
+</dd></dl>
+
 <section id="init-constructor">
-<h3>__init__ (Constructor)<a class="headerlink" href="#init-constructor" title="Link to this heading">¶</a></h3>
-<p>Arguments:</p>
-<ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">num_of_bits</span></code>: the number of random bits</p></li>
-</ul>
-<p>Return Value: (nothing)</p>
+<h2>__init__ (Constructor)<a class="headerlink" href="#init-constructor" title="Link to this heading">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.RandomBits.__init__">
+<span class="sig-prename descclassname"><span class="pre">RandomBits.</span></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_of_bits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.RandomBits.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </section>
 <section id="get-bits-getter">
-<h3>get_bits (Getter)<a class="headerlink" href="#get-bits-getter" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: <code class="code docutils literal notranslate"><span class="pre">[bit1,bit2,...,bitn]</span></code></p>
+<h2>get_bits (Getter)<a class="headerlink" href="#get-bits-getter" title="Link to this heading">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.RandomBits.get_bits">
+<span class="sig-prename descclassname"><span class="pre">RandomBits.</span></span><span class="sig-name descname"><span class="pre">get_bits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bits.RandomBits.get_bits" title="Link to this definition">¶</a></dt>
+<dd><p>Getter method for the class.
+Returns the list of bits.</p>
+</dd></dl>
+
 </section>
 <section id="set-bits-setter">
-<h3>set_bits (Setter)<a class="headerlink" href="#set-bits-setter" title="Link to this heading">¶</a></h3>
-<p>Arguments:</p>
-<ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">[bit1,bit2,...,bitn]</span></code></p></li>
-</ul>
-<p>Return Value: (none)</p>
+<h2>set_bits (Setter)<a class="headerlink" href="#set-bits-setter" title="Link to this heading">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.RandomBits.set_bits">
+<span class="sig-prename descclassname"><span class="pre">RandomBits.</span></span><span class="sig-name descname"><span class="pre">set_bits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newbits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.RandomBits.set_bits" title="Link to this definition">¶</a></dt>
+<dd><p>Setter method that validates the bits first.</p>
+</dd></dl>
+
 </section>
-<section id="validate-validator">
-<h3>validate (Validator)<a class="headerlink" href="#validate-validator" title="Link to this heading">¶</a></h3>
-<p>Arguments:</p>
-<ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">[bit1,bit2,...,bitn]</span></code></p></li>
-</ul>
-<p>Raises InvalidBitsError if bits are invalid</p>
-<p>Return Value: (none)</p>
+<section id="validate">
+<h2>validate<a class="headerlink" href="#validate" title="Link to this heading">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.RandomBits.validate">
+<span class="sig-prename descclassname"><span class="pre">RandomBits.</span></span><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.RandomBits.validate" title="Link to this definition">¶</a></dt>
+<dd><p>Makes sure there are only two bits in the provided list and that they are all 0 or 1.
+Returns True if the bits are valid, otherwise raises an InvalidBitsError.</p>
+</dd></dl>
+
 </section>
 <section id="andgate">
-<h3>andGate<a class="headerlink" href="#andgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: <code class="code docutils literal notranslate"><span class="pre">[bit1,bit2,...,bitn]</span></code></p>
+<h2>andGate<a class="headerlink" href="#andgate" title="Link to this heading">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.RandomBits.andGate">
+<span class="sig-prename descclassname"><span class="pre">RandomBits.</span></span><span class="sig-name descname"><span class="pre">andGate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">otherBits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.RandomBits.andGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a bitwise AND gate.</p>
+</dd></dl>
+
 </section>
 <section id="orgate">
-<h3>orGate<a class="headerlink" href="#orgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: <code class="code docutils literal notranslate"><span class="pre">[bit1,bit2,...,bitn]</span></code></p>
+<h2>orGate<a class="headerlink" href="#orgate" title="Link to this heading">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.RandomBits.orGate">
+<span class="sig-prename descclassname"><span class="pre">RandomBits.</span></span><span class="sig-name descname"><span class="pre">orGate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">otherBits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.RandomBits.orGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a bitwise OR gate.</p>
+</dd></dl>
+
 </section>
 <section id="notgate">
-<h3>notGate<a class="headerlink" href="#notgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: <code class="code docutils literal notranslate"><span class="pre">[bit1,bit2,...,bitn]</span></code></p>
+<h2>notGate<a class="headerlink" href="#notgate" title="Link to this heading">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.RandomBits.notGate">
+<span class="sig-prename descclassname"><span class="pre">RandomBits.</span></span><span class="sig-name descname"><span class="pre">notGate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bits.RandomBits.notGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a bitwise NOT gate.</p>
+</dd></dl>
+
 </section>
 <section id="norgate">
-<h3>norGate<a class="headerlink" href="#norgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: <code class="code docutils literal notranslate"><span class="pre">[bit1,bit2,...,bitn]</span></code></p>
+<h2>norGate<a class="headerlink" href="#norgate" title="Link to this heading">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.RandomBits.norGate">
+<span class="sig-prename descclassname"><span class="pre">RandomBits.</span></span><span class="sig-name descname"><span class="pre">norGate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">otherBits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.RandomBits.norGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a bitwise NOR gate.</p>
+</dd></dl>
+
 </section>
 <section id="nandgate">
-<h3>nandGate<a class="headerlink" href="#nandgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: <code class="code docutils literal notranslate"><span class="pre">[bit1,bit2,...,bitn]</span></code></p>
+<h2>nandGate<a class="headerlink" href="#nandgate" title="Link to this heading">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.RandomBits.nandGate">
+<span class="sig-prename descclassname"><span class="pre">RandomBits.</span></span><span class="sig-name descname"><span class="pre">nandGate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">otherBits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.RandomBits.nandGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a bitwise NAND gate.</p>
+</dd></dl>
+
 </section>
 <section id="xorgate">
-<h3>xorGate<a class="headerlink" href="#xorgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: <code class="code docutils literal notranslate"><span class="pre">[bit1,bit2,...,bitn]</span></code></p>
+<h2>xorGate<a class="headerlink" href="#xorgate" title="Link to this heading">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.RandomBits.xorGate">
+<span class="sig-prename descclassname"><span class="pre">RandomBits.</span></span><span class="sig-name descname"><span class="pre">xorGate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">otherBits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.RandomBits.xorGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a bitwise XOR gate.</p>
+</dd></dl>
+
 </section>
 <section id="xnorgate">
-<h3>xnorGate<a class="headerlink" href="#xnorgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: <code class="code docutils literal notranslate"><span class="pre">[bit1,bit2,...,bitn]</span></code></p>
-</section>
-<section id="id1">
-<h3>andGate<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: <code class="code docutils literal notranslate"><span class="pre">[bit1,bit2,...,bitn]</span></code></p>
-</section>
+<h2>xnorGate<a class="headerlink" href="#xnorgate" title="Link to this heading">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.RandomBits.xnorGate">
+<span class="sig-prename descclassname"><span class="pre">RandomBits.</span></span><span class="sig-name descname"><span class="pre">xnorGate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">otherBits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.RandomBits.xnorGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a bitwise XNOR gate.</p>
+</dd></dl>
+
 </section>
 </section>
 
@@ -139,7 +171,18 @@
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">RandomBits Docs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#rb"><code class="code docutils literal notranslate"><span class="pre">RandomBits</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bits.RandomBits"><code class="docutils literal notranslate"><span class="pre">RandomBits</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#init-constructor">__init__ (Constructor)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-bits-getter">get_bits (Getter)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-bits-setter">set_bits (Setter)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#validate">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#andgate">andGate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#orgate">orGate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notgate">notGate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#norgate">norGate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nandgate">nandGate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xorgate">xorGate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xnorgate">xnorGate</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="TwoBits.html">TwoBits Docs</a></li>
@@ -167,7 +210,7 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &#169;2023, Luke Villalobos.
+      &#169;2025, Luke Villalobos.
       
       |
       Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>

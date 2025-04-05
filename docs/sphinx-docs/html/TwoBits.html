@@ -39,74 +39,108 @@
 <p><code class="code docutils literal notranslate"><span class="pre">TwoBits</span></code> stores two bits and lets you use logic gates on them.</p>
 <section id="init-constructor">
 <h3>__init__ (Constructor)<a class="headerlink" href="#init-constructor" title="Link to this heading">¶</a></h3>
-<p>Arguments:</p>
-<ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">bit1</span></code>: integer, either 0 or 1</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">bit2</span></code>: integer, either 0 or 1</p></li>
-</ul>
-<p>Return Value: (nothing)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.TwoBits.__init__">
+<span class="sig-prename descclassname"><span class="pre">TwoBits.</span></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bit1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bit2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.TwoBits.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </section>
 <section id="get-bits-getter">
 <h3>get_bits (Getter)<a class="headerlink" href="#get-bits-getter" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: <code class="code docutils literal notranslate"><span class="pre">[bit1,bit2]</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.TwoBits.get_bits">
+<span class="sig-prename descclassname"><span class="pre">TwoBits.</span></span><span class="sig-name descname"><span class="pre">get_bits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bits.TwoBits.get_bits" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the list of bits from the class instance.</p>
+</dd></dl>
+
 </section>
 <section id="set-bits-setter">
 <h3>set_bits (Setter)<a class="headerlink" href="#set-bits-setter" title="Link to this heading">¶</a></h3>
-<p>Arguments:</p>
-<ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">[bit1,bit2]</span></code></p></li>
-</ul>
-<p>Return Value: (none)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.TwoBits.set_bits">
+<span class="sig-prename descclassname"><span class="pre">TwoBits.</span></span><span class="sig-name descname"><span class="pre">set_bits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newbits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.TwoBits.set_bits" title="Link to this definition">¶</a></dt>
+<dd><p>Validates the new bits and then sets them.</p>
+</dd></dl>
+
 </section>
 <section id="validate-validator">
 <h3>validate (Validator)<a class="headerlink" href="#validate-validator" title="Link to this heading">¶</a></h3>
-<p>Arguments:</p>
-<ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">[bit1,bit2]</span></code></p></li>
-</ul>
-<p>Raises InvalidBitsError if bits are invalid</p>
-<p>Return Value: (none)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.TwoBits.validate">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TwoBits.</span></span><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bits.TwoBits.validate" title="Link to this definition">¶</a></dt>
+<dd><p>Makes sure there are only two bits in the provided list and that they are all 0 or 1.</p>
+</dd></dl>
+
 </section>
 <section id="andgate">
 <h3>andGate<a class="headerlink" href="#andgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: 1 or 0</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.TwoBits.andGate">
+<span class="sig-prename descclassname"><span class="pre">TwoBits.</span></span><span class="sig-name descname"><span class="pre">andGate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bits.TwoBits.andGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a basic AND gate.
+Operates on the TwoBits instance it was called from.</p>
+</dd></dl>
+
 </section>
 <section id="orgate">
 <h3>orGate<a class="headerlink" href="#orgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: 1 or 0</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.TwoBits.orGate">
+<span class="sig-prename descclassname"><span class="pre">TwoBits.</span></span><span class="sig-name descname"><span class="pre">orGate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bits.TwoBits.orGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a basic OR gate.
+Operates on the TwoBits instance it was called from.</p>
+</dd></dl>
+
 </section>
 <section id="notgate">
 <h3>notGate<a class="headerlink" href="#notgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: <code class="code docutils literal notranslate"><span class="pre">[bit1,</span> <span class="pre">bit2]</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.TwoBits.notGate">
+<span class="sig-prename descclassname"><span class="pre">TwoBits.</span></span><span class="sig-name descname"><span class="pre">notGate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bits.TwoBits.notGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a basic NOT gate.
+Operates on the TwoBits instance it was called from.</p>
+</dd></dl>
+
 </section>
 <section id="norgate">
 <h3>norGate<a class="headerlink" href="#norgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: 1 or 0</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.TwoBits.norGate">
+<span class="sig-prename descclassname"><span class="pre">TwoBits.</span></span><span class="sig-name descname"><span class="pre">norGate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bits.TwoBits.norGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a basic NOR gate.
+Operates on the TwoBits instance it was called from.</p>
+</dd></dl>
+
 </section>
 <section id="nandgate">
 <h3>nandGate<a class="headerlink" href="#nandgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: 1 or 0</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.TwoBits.nandGate">
+<span class="sig-prename descclassname"><span class="pre">TwoBits.</span></span><span class="sig-name descname"><span class="pre">nandGate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bits.TwoBits.nandGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a basic NAND gate.
+Operates on the TwoBits instance it was called from.</p>
+</dd></dl>
+
 </section>
 <section id="xorgate">
 <h3>xorGate<a class="headerlink" href="#xorgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: 1 or 0</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.TwoBits.xorGate">
+<span class="sig-prename descclassname"><span class="pre">TwoBits.</span></span><span class="sig-name descname"><span class="pre">xorGate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bits.TwoBits.xorGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a basic XOR gate.
+Operates on the TwoBits instance it was called from.</p>
+</dd></dl>
+
 </section>
 <section id="xnorgate">
 <h3>xnorGate<a class="headerlink" href="#xnorgate" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: 1 or 0</p>
-</section>
-<section id="id1">
-<h3>andGate<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
-<p>Arguments: (none)</p>
-<p>Return Value: 1 or 0</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bits.TwoBits.xnorGate">
+<span class="sig-prename descclassname"><span class="pre">TwoBits.</span></span><span class="sig-name descname"><span class="pre">xnorGate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bits.TwoBits.xnorGate" title="Link to this definition">¶</a></dt>
+<dd><p>Implements a basic XNOR gate.
+Operates on the TwoBits instance it was called from.</p>
+</dd></dl>
+
 </section>
 </section>
 </section>
@@ -166,7 +200,7 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &#169;2023, Luke Villalobos.
+      &#169;2025, Luke Villalobos.
       
       |
       Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>

@@ -2,10 +2,12 @@ import random
 from exceptions import InvalidBitsError
 
 class Bits(object):
+    """The main parent class that implements a list of bits."""
     def __init__(self, bits):
         self.bits = bits
 
     def pad(self, otherBits):
+        """Pads two lists of bits with zeroes to make them the same length."""
         selfLen,otherLen = len(self.bits),len(otherBits)
         if selfLen > otherLen:
             for i in range(selfLen - otherLen):
@@ -19,7 +21,7 @@ class Bits(object):
 
 
     def andGate(self, otherBits):
-        """Implements a basic AND gate."""
+        """Implements a bitwise AND gate."""
         results = []
         if type(otherBits) == Bits:
             for i in range(len(self.bits)):
@@ -36,7 +38,7 @@ class Bits(object):
         return results
 
     def orGate(self, otherBits):
-        """Implements a basic OR gate."""
+        """Implements a bitwise OR gate."""
         results = []
         if type(otherBits) == Bits:
             for i in range(len(self.bits)):
@@ -53,7 +55,7 @@ class Bits(object):
         return results
 
     def nandGate(self, otherBits):
-        """Implements a basic NAND gate."""
+        """Implements a bitwise NAND gate."""
         results = []
         if type(otherBits) == Bits:
             for i in range(len(self.bits)):
@@ -70,7 +72,7 @@ class Bits(object):
         return results
 
     def notGate(self):
-        """Implements a basic NOT gate.
+        """Implements a bitwise NOT gate.
         Operates on the Bits instance it was called from."""
         results = []
         for i in range(len(self.bits)):
@@ -81,7 +83,7 @@ class Bits(object):
         return results
 
     def norGate(self,otherBits):
-        """Implements a NOR gate."""
+        """Implements a bitwise NOR gate."""
         results = []
         if type(otherBits) == Bits:
             for i in range(len(self.bits)):
@@ -98,7 +100,7 @@ class Bits(object):
         return results
     
     def xorGate(self,otherBits):
-        """Implements an XOR gate."""
+        """Implements a bitwise XOR gate."""
         results = []
         if type(otherBits) == Bits:
             for i in range(len(self.bits)):
@@ -123,7 +125,7 @@ class Bits(object):
         return results
     
     def xnorGate(self, otherBits):
-        """Implements an XNOR gate."""
+        """Implements a bitwise XNOR gate."""
         results = []
         if type(otherBits) == Bits:
             for i in range(len(self.bits)):
@@ -145,6 +147,7 @@ class Bits(object):
 
 
 class TwoBits(object):
+    """Implements two single bits and lets you do operations with them."""
     def __init__(self, bit1, bit2):
         self.bits = []
         self.bit = bit1
@@ -228,17 +231,23 @@ class TwoBits(object):
 
 
 class RandomBits(Bits):
+    """Like ``Bits``, except the bits are randomly generated."""
     def __init__(self, num_of_bits):
         self.bits = [random.randrange(0, 2) for _ in range(num_of_bits)]
 
     def get_bits(self):
+        """Getter method for the class.
+        Returns the list of bits."""
         return self.bits
 
     def set_bits(self, newbits):
+        """Setter method that validates the bits first."""
         self.validate(newbits)
         self.bits = newbits
 
     def validate(self, bits):
+        """Makes sure there are only two bits in the provided list and that they are all 0 or 1.
+        Returns True if the bits are valid, otherwise raises an InvalidBitsError."""
         if len(self.bits) != len(bits):
             raise InvalidBitsError("The number of bits must be " + str(len(self.bits)))
         for bit in bits:
@@ -247,7 +256,7 @@ class RandomBits(Bits):
             return True
 
     def andGate(self, otherBits):
-        """Implements a basic AND gate."""
+        """Implements a bitwise AND gate."""
         results = []
         if type(otherBits) == Bits:
             for i in range(len(self.bits)):
@@ -264,7 +273,7 @@ class RandomBits(Bits):
         return results
 
     def orGate(self, otherBits):
-        """Implements a basic OR gate."""
+        """Implements a bitwise OR gate."""
         results = []
         if type(otherBits) == Bits:
             for i in range(len(self.bits)):
@@ -281,7 +290,7 @@ class RandomBits(Bits):
         return results
 
     def nandGate(self, otherBits):
-        """Implements a basic NAND gate."""
+        """Implements a bitwise NAND gate."""
         results = []
         if type(otherBits) == Bits:
             for i in range(len(self.bits)):
@@ -298,7 +307,7 @@ class RandomBits(Bits):
         return results
 
     def notGate(self):
-        """Implements a basic NOT gate."""
+        """Implements a bitwise NOT gate."""
         results = []
         for i in range(len(self.bits)):
             if self.bits[i]:
@@ -308,7 +317,7 @@ class RandomBits(Bits):
         return results
 
     def norGate(self,otherBits):
-        """Implements a NOR gate."""
+        """Implements a bitwise NOR gate."""
         results = []
         if type(otherBits) == Bits:
             for i in range(len(self.bits)):
@@ -325,7 +334,7 @@ class RandomBits(Bits):
         return results
     
     def xorGate(self,otherBits):
-        """Implements an XOR gate."""
+        """Implements a bitwise XOR gate."""
         results = []
         if type(otherBits) == Bits:
             for i in range(len(self.bits)):
@@ -350,7 +359,7 @@ class RandomBits(Bits):
         return results
     
     def xnorGate(self, otherBits):
-        """Implements an XNOR gate."""
+        """Implements a bitwise XNOR gate."""
         results = []
         if type(otherBits) == Bits:
             for i in range(len(self.bits)):

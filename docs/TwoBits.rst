@@ -1,91 +1,55 @@
 .. |tb| replace:: :code:`TwoBits`
+.. py:currentmodule:: bits
 
-!!!!!!!!!!!!
+############
 TwoBits Docs
-!!!!!!!!!!!!
+############
 
--------
+""""""""
 |tb|
--------
+""""""""
 |tb| stores two bits and lets you use logic gates on them.
 
 __init__ (Constructor)
-......................
-Arguments:
-
-* :code:`bit1`: integer, either 0 or 1
-* :code:`bit2`: integer, either 0 or 1
-
-Return Value: (nothing)
+""""""""""""""""""""""
+.. automethod:: bits.TwoBits.__init__
 
 get_bits (Getter)
-.................
-Arguments: (none)
-
-Return Value: :code:`[bit1,bit2]`
+"""""""""""""""""
+.. automethod:: bits.TwoBits.get_bits
 
 set_bits (Setter)
-.................
-Arguments:
-
-* :code:`[bit1,bit2]`
-
-Return Value: (none)
+"""""""""""""""""
+.. automethod:: bits.TwoBits.set_bits
 
 validate (Validator)
-....................
-Arguments:
-
-* :code:`[bit1,bit2]`
-
-Raises InvalidBitsError if bits are invalid
-
-Return Value: (none)
+""""""""""""""""""""
+.. automethod:: bits.TwoBits.validate
 
 andGate
-.......
-Arguments: (none)
-
-Return Value: 1 or 0
+"""""""
+.. automethod:: bits.TwoBits.andGate
 
 orGate
-......
-Arguments: (none)
-
-Return Value: 1 or 0
+"""""" 
+.. automethod:: bits.TwoBits.orGate
 
 notGate
-.......
-Arguments: (none)
-
-Return Value: :code:`[bit1, bit2]`
+"""""""
+.. automethod:: bits.TwoBits.notGate
 
 norGate
-.......
-Arguments: (none)
-
-Return Value: 1 or 0
+"""""""
+.. automethod:: bits.TwoBits.norGate
 
 nandGate
-........
-Arguments: (none)
-
-Return Value: 1 or 0
+""""""""
+.. automethod:: bits.TwoBits.nandGate
 
 xorGate
-.......
-Arguments: (none)
-
-Return Value: 1 or 0
+"""""""
+.. automethod:: bits.TwoBits.xorGate
 
 xnorGate
-........
-Arguments: (none)
-
-Return Value: 1 or 0
-
-andGate
-.......
-Arguments: (none)
-
-Return Value: 1 or 0
+""""""""
+.. automethod:: bits.TwoBits.xnorGate
